@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="404, Black-233">
+    <meta name="keywords" content="凯撒密码, Black-233">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>404 | Black-233</title>
+    <title>凯撒密码 | Black-233</title>
     <link rel="icon" type="image/png" href="/onestar.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -416,12 +416,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">404</h1>
+                    <h1 class="description center-align post-title">凯撒密码</h1>
                 </div>
             </div>
         </div>
@@ -536,12 +536,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -550,7 +567,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-28
+                    2020-07-29
                 </div>
                 
 
@@ -559,7 +576,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    382
                 </div>
                 
 
@@ -571,7 +588,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="凯撒密码加密和破解"><a href="#凯撒密码加密和破解" class="headerlink" title="凯撒密码加密和破解"></a>凯撒密码加密和破解</h3><blockquote>
+<p>高中生一枚，有错误可以在评论区指出来哦。<br>示例均使用Python语言</p>
+</blockquote>
+<h4 id="有关凯撒密码"><a href="#有关凯撒密码" class="headerlink" title="有关凯撒密码"></a>有关凯撒密码</h4><ol>
+<li>概念:<br>在密码学中，凯撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。  </li>
+<li>密码破解:<br> 使用唯密文破解，考虑两种情况:<ul>
+<li>攻击者知道密码中使用了某个简单的替换加密方式，但不确定是凯撒密码。<ul>
+<li>通过频率分析或样式单词等分析方法，通过密文的规律推测是凯撒密码。</li>
+</ul>
+</li>
+<li>攻击者猜测使用了凯撒密码，但不知道偏移量。<ul>
+<li>由于偏移量有限，使用穷举法破解。</li>
+<li>在密文长度足够大的情况下，可先统计分析每个字母出现的频率，使用频率分析法破解。<h4 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h4><blockquote>
+<p>仅展示核心算法部分</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python">lowering <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>chr<span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token keyword">for</span> value <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+stepers <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入步进值:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span>
+<span class="token keyword">if</span> stepers <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+stepers <span class="token operator">+=</span> <span class="token number">26</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">pass</span>
+table <span class="token operator">=</span> str<span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span>lowering<span class="token punctuation">,</span>lowering<span class="token punctuation">[</span>stepers<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">+</span>lowering<span class="token punctuation">[</span><span class="token punctuation">:</span>stepers<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<h4 id="算法总结"><a href="#算法总结" class="headerlink" title="算法总结"></a>算法总结</h4><pre class=" language-python"><code class="language-python">stepers <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"....."</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span>
+<span class="token keyword">if</span> stepers <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+stepers <span class="token operator">+=</span> <span class="token number">26</span> <span class="token comment" spellcheck="true">#关键算法</span></code></pre>
+保证了正负值均可计算<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h4>了解具体需求后，分析算法和考虑多情况。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
             </div>
             <hr/>
 
@@ -596,7 +645,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Black-233.github.io/404.html">http://Black-233.github.io/404.html</a>
+                    <a href="http://Black-233.github.io/2020/07293172.html">http://Black-233.github.io/2020/07293172.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -633,7 +682,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -802,7 +859,7 @@
         repo: 'Black-233.github.io',
         owner: 'Black-233',
         admin: "Black-233",
-        id: '2020-07-28T14-10-30',
+        id: '2020-07-29T09-06-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -831,34 +888,54 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/404.html">
+                <a href="/2020/07293172.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="404">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="凯撒密码">
                         
-                        <span class="card-title">404</span>
+                        <span class="card-title">凯撒密码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            凯撒密码加密和破解
+高中生一枚，有错误可以在评论区指出来哦。示例均使用Python语言
+
+有关凯撒密码
+概念:在密码学中，凯撒密码（英语：Caesar cipher），或称恺撒加密、恺撒变换、变换加密，是一种最简单且最广为人知的加密技术。它
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Black-233
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -866,22 +943,22 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/404.html">
+                <a href="/2020/072816107.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="404">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">404</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
@@ -890,13 +967,28 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Black-233
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
